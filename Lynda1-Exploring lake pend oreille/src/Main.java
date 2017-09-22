@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -20,17 +21,23 @@ public class Main {
 		
 		Reader reader = new Reader(filePath);
 		
-		ArrayList<Double> airTemprature = reader.getData(Macros.AIR_TEMP, inputDate);
-		ArrayList<Double> barometricPressure = reader.getData(Macros.BAROMETRIC_PRESSURE, inputDate);
-		ArrayList<Double> dewPoint = reader.getData(Macros.DEW_POINT, inputDate);
-		ArrayList<Double> relativeHumidity = reader.getData(Macros.RELATIVE_HUMIDITY, inputDate);
-		ArrayList<Double> windDirection = reader.getData(Macros.WIND_DIRECTION, inputDate);
-		ArrayList<Double> windGust = reader.getData(Macros.WIND_GUST, inputDate);
-		ArrayList<Double> windSpeed = reader.getData(Macros.WIND_SPEED, inputDate);
+		HashMap<Integer,ArrayList<Double>> retrievedData = new HashMap<Integer,ArrayList<Double>>();
 		
+		retrievedData.put(Macros.AIR_TEMP, reader.getData(Macros.AIR_TEMP, inputDate));
+		retrievedData.put(Macros.BAROMETRIC_PRESSURE, reader.getData(Macros.BAROMETRIC_PRESSURE, inputDate));
+		retrievedData.put(Macros.DEW_POINT, reader.getData(Macros.DEW_POINT, inputDate));
+		retrievedData.put(Macros.RELATIVE_HUMIDITY, reader.getData(Macros.RELATIVE_HUMIDITY, inputDate));
+		retrievedData.put(Macros.WIND_DIRECTION, reader.getData(Macros.WIND_DIRECTION, inputDate));
+		retrievedData.put(Macros.WIND_GUST, reader.getData(Macros.WIND_GUST, inputDate));
+		retrievedData.put(Macros.WIND_SPEED, reader.getData(Macros.WIND_SPEED, inputDate));
 		
-		
-		
+//		ArrayList<Double> airTemprature = reader.getData(Macros.AIR_TEMP, inputDate);
+//		ArrayList<Double> barometricPressure = reader.getData(Macros.BAROMETRIC_PRESSURE, inputDate);
+//		ArrayList<Double> dewPoint = reader.getData(Macros.DEW_POINT, inputDate);
+//		ArrayList<Double> relativeHumidity = reader.getData(Macros.RELATIVE_HUMIDITY, inputDate);
+//		ArrayList<Double> windDirection = reader.getData(Macros.WIND_DIRECTION, inputDate);
+//		ArrayList<Double> windGust = reader.getData(Macros.WIND_GUST, inputDate);
+//		ArrayList<Double> windSpeed = reader.getData(Macros.WIND_SPEED, inputDate);
 		
 		
 		scanner.close();
