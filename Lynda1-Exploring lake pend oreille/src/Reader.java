@@ -16,20 +16,24 @@ public class Reader {
 		
 	} 
 	
-	public ArrayList<Double> getData(double offset,String inputDate) throws IOException{
+	public ArrayList<Double> getData(int offset,String inputDate) throws IOException{
+		
+		String currentLine;
+		Double tempValue;
+		ArrayList<Double> sensorValues = new ArrayList<Double>();
 		
 		BufferedReader fileReader = new BufferedReader(new FileReader(inputFile));
 		
-		String currentLine;
-		/*read values from file by reading line by line and
-		 * for each line cut 4 characters from the given offset 
-		 * get each 4 digit number and parse it into double, store in the arraylist,
-		 * return that array list 
-		 */
 		
 		while ((currentLine = fileReader.readLine()) != null){
 			if(currentLine.startsWith(inputDate)){
-				System.out.println(currentLine);
+				/*read values from file by reading line by line and
+				 * for each line cut 5 characters from the given offset 
+				 * get each 4 digit number and parse it into double, store in the sensorValues,
+				 * return that array list 
+				 */
+				tempValue = Double.parseDouble(currentLine.substring(offset, offset+5));
+				System.out.println(tempValue);
 			}
 		}
 		
