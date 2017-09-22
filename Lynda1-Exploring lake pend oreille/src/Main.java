@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +20,16 @@ public class Main {
 		inputs[2] = scanner.nextLine();
 		
 		Reader reader = new Reader("Sensor_Data/"+inputs[0]+"/"+inputs[0]+".txt");
+		
+		ArrayList<Double> airTemprature = reader.getData(Macros.AIR_TEMP, inputs);
+		ArrayList<Double> barometricPressure = reader.getData(Macros.BAROMETRIC_PRESSURE, inputs);
+		ArrayList<Double> dewPoint = reader.getData(Macros.DEW_POINT, inputs);
+		ArrayList<Double> relativeHumidity = reader.getData(Macros.RELATIVE_HUMIDITY, inputs);
+		ArrayList<Double> windDirection = reader.getData(Macros.WIND_DIRECTION, inputs);
+		ArrayList<Double> windGust = reader.getData(Macros.WIND_GUST, inputs);
+		ArrayList<Double> windSpeed = reader.getData(Macros.WIND_SPEED, inputs);
+		
+		
 		
 		
 		
