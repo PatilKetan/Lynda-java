@@ -31,13 +31,15 @@ public class Main {
 		retrievedData.put(Macros.WIND_GUST, reader.getData(Macros.WIND_GUST, inputDate));
 		retrievedData.put(Macros.WIND_SPEED, reader.getData(Macros.WIND_SPEED, inputDate));
 		
-//		ArrayList<Double> airTemprature = reader.getData(Macros.AIR_TEMP, inputDate);
-//		ArrayList<Double> barometricPressure = reader.getData(Macros.BAROMETRIC_PRESSURE, inputDate);
-//		ArrayList<Double> dewPoint = reader.getData(Macros.DEW_POINT, inputDate);
-//		ArrayList<Double> relativeHumidity = reader.getData(Macros.RELATIVE_HUMIDITY, inputDate);
-//		ArrayList<Double> windDirection = reader.getData(Macros.WIND_DIRECTION, inputDate);
-//		ArrayList<Double> windGust = reader.getData(Macros.WIND_GUST, inputDate);
-//		ArrayList<Double> windSpeed = reader.getData(Macros.WIND_SPEED, inputDate);
+		
+		System.out.println("AIR TEMPRATURE : " + retrievedData.get(Macros.AIR_TEMP).toString());
+		System.out.println("BAROMETRIC PRESSURE : " + retrievedData.get(Macros.BAROMETRIC_PRESSURE).toString());
+		System.out.println("DEW POINT : " + retrievedData.get(Macros.DEW_POINT).toString());
+		System.out.println("RELATIVE HUMIDITY : " + retrievedData.get(Macros.RELATIVE_HUMIDITY).toString());
+		System.out.println("WIND DIRECTION : " + retrievedData.get(Macros.WIND_DIRECTION).toString());
+		System.out.println("WIND GUST : " + retrievedData.get(Macros.WIND_GUST).toString());
+		System.out.println("WIND SPEED : " + retrievedData.get(Macros.WIND_SPEED 	).toString());
+		
 		
 		
 		scanner.close();
