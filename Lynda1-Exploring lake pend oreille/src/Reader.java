@@ -12,7 +12,6 @@ public class Reader {
 	public Reader(String fileName) {
 		
 		inputFile = new File(fileName);
-		System.out.println(fileName);
 		
 	} 
 	
@@ -27,17 +26,12 @@ public class Reader {
 		
 		while ((currentLine = fileReader.readLine()) != null){
 			if(currentLine.startsWith(inputDate)){
-				/*read values from file by reading line by line and
-				 * for each line cut 5 characters from the given offset 
-				 * get each 4 digit number and parse it into double, store in the sensorValues,
-				 * return that array list 
-				 */
 				tempValue = Double.parseDouble(currentLine.substring(offset, offset+5));
-				System.out.println(tempValue);
+				sensorValues.add(tempValue);
 			}
 		}
 		
-		return null;
+		return sensorValues;
 	}
 	
 
